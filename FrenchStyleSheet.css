@@ -1,0 +1,122 @@
+
+
+
+.title{
+    background-color:black;
+    color:red;
+    font-size: 100px;
+    font-family: 'Pacifico', cursive;
+    text-shadow:-1px -1px 0 #FFFF,
+    1px -1px 0 #FFFF,
+    -1px 1px 0 #FFFF,
+    1px 1px 0 #FFFF;
+}
+h1{
+    color:red;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size:100px;
+}
+h2{
+    font-size:60px;
+    background-color:#190858;
+    text-align:left;
+    font-family: 'Pacifico', cursive;
+    color:black;
+    text-shadow:-1px -1px 0 #FFFF,
+    1px -1px 0 #FFFF,
+    -1px 1px 0 #FFFF,
+    1px 1px 0 #FFFF;
+    margin-bottom:0px;
+    margin-top:5px;
+    
+}
+.nav {
+    background-color:black;
+    overflow: hidden;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+
+.nav a{
+    
+    background-color:#0055a4;
+    text-decoration:none;
+    color:white;
+    font-size:60px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding:1px 20px;
+   
+    
+    
+}
+
+.nav a:hover{
+    background-color:#B7CFF7
+}
+
+body{
+    background-color:#B7CFF7;
+}
+
+.row{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.info{
+    font-size:28px;
+    background-color:rgba(103, 157, 248,.5);
+    text-align: center;
+    margin:0px;
+    font-family:'Raleway', sans-serif;
+    grid-column: 1/ span 3;
+    
+}
+.eiffel{
+    grid-column: 4 / span 1;
+    
+}
+
+
+.container{
+    background-color: red;
+    padding-top:10px;
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/20/18/55/french-flag-1053711_1280.png");
+    background-size: cover;
+   
+}
+
+.rect{
+    width:100%;
+    height:144px;
+    background-color: #190858;
+    
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:1px;
+    background-image:url("./blue-snow.png") /* Background pattern from Toptal Subtle Patterns */
+}
+
+.family{
+    grid-column: 1 / span 3;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    font-family:'Raleway', sans-serif;
+    background-color: #fefecc;
+    outline: 5px solid #190858;
+    margin-top:5px;
+
+}
+
+.photo{
+    grid-column: 3 / span 1;
+    margin-top:20px;
+}
