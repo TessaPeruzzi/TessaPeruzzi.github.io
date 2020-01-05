@@ -101,10 +101,12 @@ body{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap:1px;
-    background-image:url("./blue-snow.png") /* Background pattern from Toptal Subtle Patterns */
+    font-family: 'Raleway', sans-serif;
+    background-image:url("./blue-snow.png"); /* Background pattern from Toptal Subtle Patterns */
+    
 }
 
-.family{
+.heading{
     grid-column: 1 / span 3;
     text-align:center;
     font-size:30px;
@@ -112,11 +114,25 @@ body{
     font-family:'Raleway', sans-serif;
     background-color: #fefecc;
     outline: 5px solid #190858;
-    margin-top:5px;
+    margin-top:10px;
 
 }
 
 .photo{
     grid-column: 3 / span 1;
     margin-top:20px;
+}
+.pig{
+    grid-column: 3 / span 1;
+    margin-top:20px;
+    margin-left:70px;
+}
+
+.pets{
+    grid-column: 1 / span 3;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    font-family:'Raleway', sans-serif;   
+    margin-top:10px;
 }
