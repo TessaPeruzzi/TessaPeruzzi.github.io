@@ -106,7 +106,8 @@ body{
     
 }
 
-.gramwrap{
+
+.gramwrap,.wrapperv{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1px;
@@ -129,6 +130,8 @@ body{
     grid-column: 3 / span 1;
     margin-top:20px;
 }
+
+
 .pig{
     grid-column: 3 / span 1;
     margin-top:20px;
@@ -139,6 +142,12 @@ body{
     background-color:#5c94fa;
     outline: 5px solid #190858;
    margin-top:5px;
+   padding-bottom:8px;
+}
+
+.centered{
+    display: block;
+    margin: 0 auto;
 }
 
 
