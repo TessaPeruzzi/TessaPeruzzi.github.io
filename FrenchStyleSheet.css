@@ -145,6 +145,9 @@ body{
    margin-top:5px;
    padding-bottom:8px;
 }
-
+.centered{
+    display: block;
+    margin: 0 auto;
+}
 
 
