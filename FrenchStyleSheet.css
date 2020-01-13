@@ -23,10 +23,7 @@ h2{
     text-align:left;
     font-family: 'Pacifico', cursive;
     color:black;
-    text-shadow:-1px -1px 0 #FFFF,
-    1px -1px 0 #FFFF,
-    -1px 1px 0 #FFFF,
-    1px 1px 0 #FFFF;
+    text-shadow:-1px -1px 0 #FFFF, 1px -1px 0 #FFFF, -1px 1px 0 #FFFF,  1px 1px 0 #FFFF;
     margin-bottom:0px;
     margin-top:5px;
     
