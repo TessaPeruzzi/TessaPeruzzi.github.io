@@ -17,7 +17,7 @@ h1{
 h2{
     font-size:60px;
     background-color:#190858;
-    text-align:left;
+    text-align:center;
     font-family: 'Pacifico', cursive;
     color:black;
     text-shadow:-1px -1px 0 #FFFF, 1px -1px 0 #FFFF, -1px 1px 0 #FFFF,  1px 1px 0 #FFFF;
@@ -51,6 +51,35 @@ h2{
 .nav a:hover{
     background-color:#B7CFF7
 }
+
+.verbNav{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    padding-top: 5px;;
+}
+
+.verbNavButton, .nounNavButton{
+    background-color: white;
+    font-weight:bold;
+    font-size:20px;
+    border-color:  #190858 ;
+}
+
+.verbNavButton:hover{
+    background-color: lightblue;
+}
+
+.nounNavButton:hover{
+    background-color: lightblue;
+}
+
+.nounNav{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    padding-top: 5px;;    
+}
+
+
 
 body{
     background-color:#B7CFF7;
@@ -101,6 +130,13 @@ body{
 }
 
 
+.modalButton{
+    text-align: left;
+    font-weight:bold;
+    font-family: 'Raleway', sans-serif;
+    outline: 2px solid #190858;
+}
+
 .gramwrap,.wrapperv{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -121,9 +157,9 @@ body{
 }
 
 .photo{
-    grid-column: 3 / span 1;
     margin-top:20px;
-    
+    margin-right:20px;
+
 }
 
 
@@ -134,14 +170,148 @@ body{
 }
 
 .explanation{
-    background-color:#5c94fa;
-    outline: 5px solid #190858;
+   background-color:#5c94fa;
+   outline: 5px solid #190858;
    margin-top:5px;
-   padding-bottom:8px;
+   padding-left: 5px;;
+   margin-bottom:10px;
+   margin-right:5px;
 }
 .centered{
     display: block;
     margin: 0 auto;
 }
 
+.accButton{
+width:100%;
+text-align:left;
+font-size:27px;
+font-weight:bold;
+font-family:'Raleway', sans-serif;
+background:rgba(255,0,0,.65);
+margin-top:10px;
+margin-bottom:10px;
+border-radius: 4px solid #190858;
+outline:4px;
+/*transition:background 1s;  This makes the background fade into the color we picked for our active state */
+}
 
+.accButton::after{ /* ::after adds these items after the writing content of accButton class*/
+    content: '\25be'; /*This is hex code for the downright triangle*/
+    float:right;
+    transform:scale(1.25); 
+}
+
+.accButton-active{
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/20/18/55/french-flag-1053711_1280.png");
+    background-size: cover;
+    color:white;
+}
+
+.accButton-active::after{
+    content:'\25b4';
+}
+
+.accContent{
+    overflow:hidden;
+    max-height:0px;
+    transition: max-height 0.2s;
+}
+
+.seperation{
+    width:100%;
+    height:20px;
+    background-color: #190858;   
+}
+
+
+.modal{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,0.7);
+    z-index:2;
+    display:none;
+}
+
+.modalContent{
+    background:white;
+    width:50%;
+    z-index:4;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding-left:20px;
+    border-radius: 8px;
+    border: 5px solid #5c94fa;
+}
+
+
+
+.verbGrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap:1px;
+    font-family: 'Raleway', sans-serif;    
+}
+.modal-header{
+    position:absolute;
+    right:10px;
+    top:10px;
+    border: 2px solid #190858;
+    color:#190858;
+}
+
+
+.talkingVerbs{
+    display:grid;
+    grid-template-rows: repeat(17, 1fr) ;   
+}
+
+.everyDayV{
+    display:grid;
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.eatingVerbs{
+    display:grid;
+    grid-template-rows: repeat(7, 1fr);
+
+}
+
+.movingVerbs{
+    display:grid;
+    grid-template-rows: repeat(13, 1fr);
+
+}
+
+.hobbyVerbs{
+    display:grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.numWrap{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-column-gap:1px;
+    font-family: 'Raleway', sans-serif;
+    background-image:url("./blue-snow.png"); /* Background pattern from Toptal Subtle Patterns */
+}
+
+.numHeading{
+    grid-column: 1 / span 5;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    font-family:'Raleway', sans-serif;
+    background-color: rgba(255,0,0,.65);
+    outline: 5px solid #190858;
+    margin-top:10px;
+}

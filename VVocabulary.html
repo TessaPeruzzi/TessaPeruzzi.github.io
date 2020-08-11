@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     </head>
-
+    <body>
     <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css" >
 
     
@@ -26,21 +26,30 @@
 
     
     <h2>Verbs</h2>
+
+    <div class="verbNav">
+        <button class="verbNavButton" buttonScroll="every">Every Day Verbs</button>
+        <button class="verbNavButton" buttonScroll="talk">Talking Verbs</button>
+        <button class="verbNavButton" buttonScroll="eat">Eating Verbs</button>
+        <button class="verbNavButton" buttonScroll="physical">Physical Activities</button>
+        <button class="verbNavButton" buttonScroll="hobby">Hobby Verbs</button>
+    </div>
+
     <div class="wrapperv">
 
-        <div class="heading"><p>Every Day Verbs</p></div>
-            <div class="french">
-            <p>*être</p>
-            <p>*avoir</p>
-            <p>*faire</p>
-            <p>*devoir</p>
-            <p>*aller</p>
-            <p>*voir</p>
-            <p>*prendre</p>
+        <div class="heading" id="every"><p>Every Day Verbs</p></div>
+            <div class="french, everyDayV">
+            <p><button class="modalButton" verbModal="etre">*être</button></p>
+            <p><button class="modalButton" verbModal="avoir">*avoir</button></p>
+            <p><button class="modalButton" verbModal="faire">*faire</button></p>
+            <p><button class="modalButton" verbModal="devoir">*devoir</button></p>
+            <p><button class="modalButton" verbModal="aller">*aller</button></p>
+            <p><button class="modalButton" verbModal="voir">*voir</button></p>
+            <p><button class="modalButton" verbModal="prendre">*prendre</button></p>
             </div>
             
         
-        <div class="english">
+        <div class="englishVerbs, , everyDayV">
            <p>to be</p>
            <p>to have</p>
            <p>to do</p>
@@ -55,35 +64,35 @@
             </div>
         </div>
  <div class=wrapperv>
-        <div class="heading"><p>Talking Verbs</p></div>
-            <div class="french">
+        <div class="heading" id="talk"><p>Talking Verbs</p></div>
+            <div class="french, talkingVerbs">
             <p>parler</p>
-            <p>*dire</p>
-            <p>*comprendre</p>
-            <p>*aprender</p>
+            <p><button class="modalButton" verbModal="dire">*dire</button></p>
             <p>enseigner</p>
+            <p><button class="modalButton" verbModal="comprendre">*comprendre</button></p>
             <p>demander</p>
+            <p><button class="modalButton" verbModal="apprendre">*apprendre</button></p>
             <p>penser</p>
-            <p>*connaître</p>
-            <p>*se souvenir</p>
-            <p>*appeler</p>
+            <p><button class="modalButton" verbModal="connaitre">*connaître</button></p>
+            <p><button class="modalButton" verbModal="seSouvenir">*se souvenir</button></p>
+            <p><button class="modalButton" verbModal="appeler">*appeler</button></p>
             <p>téléphoner</p>
             <p>décider</p>
-            <p>*répondre</p>
-            <p>*rappeler</p>
+            <p><button class="modalButton" verbModal="repondre">*répondre</button></p>
+            <p><button class="modalButton" verbModal="rappeler">*rappeler</button></p>
             <p>expliquer</p>
             <p>rencontrer</p>
             <p>Je suis d'accord.</p>
             </div>
             
         
-        <div class="english">
+        <div class="verbs, talkingVerbs">
            <p>to talk</p>
            <p>to say</p>
-           <p>to understand</p>
-           <p>to learn</p>
            <p>to teach</p>
+           <p>to understand</p>
            <p>to ask</p>
+           <p>to learn</p>
            <p>to think</p>
            <p>to know (someone)</p>
            <p>to remember</p>
@@ -98,11 +107,655 @@
         </div>
         
             <div class="photo">
-            <img src="electronics-1851218_1280.jpg" alt="Phone" style="max-width:100%; height:500px; object-fit: contain;" >
+            <img src="thephone.jpg" alt="Phone" style="max-width:100%; height:auto; object-fit: contain;" >
+            </div>
+        </div>
+    
+        <div class=wrapperv>
+            <div class="heading" id="eat"><p>Eating Verbs</p></div>
+                <div class="french, eatingVerbs" >
+                <p><button class="modalButton" verbModal="manger">*manger</button></p>
+                <p><button class="modalButton" verbModal="boire">*boire</button></p>
+                <p>cuisiner</p>
+                <p>faire la cuisine</p>
+                <p><button class="modalButton" verbModal="cuire">*cuire</button></p>
+                <p>commander</p>
+                <p>choisir</p>
+                </div>
+                
+            
+            <div class="verbs, eatingVerbs">
+                <p>to eat</p>
+                <p>to drink</p>
+                <p>to cook</p>
+                <p>to do the cooking</p>
+                <p>something is cooked</p>
+                <p>to order</p> 
+                <p>to choose</p>
+            </div>
+            
+                <div class="photo">
+                <img src="macarons.jpg" alt="food" style="max-width:100%; height:auto; object-fit: contain;" >
+                </div>
+            </div>
+
+            <div class=wrapperv>
+                <div class="heading" id="physical"><p>Physical Activities</p></div>
+                    <div class="french, movingVerbs" >
+                        <p><button class="modalButton" verbModal="courir">*courir</button></p>
+                        <p>marcher</p>
+                        <p><button class="modalButton" verbModal="nager">*nager</button></p>
+                        <p><button class="modalButton" verbModal="sePromener">*se promener</button></p>
+                        <p>faire du jogging</p>
+                        <p>faire de la randonnée</p>
+                        <p>aller à la pêche</p>
+                        <p>danser</p>
+                        <p>faire du sports</p>
+                        <p>jouer au basket/baseball/foot/football/tennis/golf</p>
+                        <p>faire du vélo</p>
+                        <p>lutter</p>
+                        <p>faire du ski</p>
+                    </div>
+                    
+                
+                <div class="verbs, movingVerbs">
+                    <p>to run</p>
+                    <p>to walk</p>
+                    <p>to to swim</p>
+                    <p>to take a stroll</p>
+                    <p>to go jogging</p>
+                    <p>to go hiking</p>
+                    <p>to go fishing</p>
+                    <p>to danse</p>
+                    <p>to do sports</p>
+                    <p>to play basketball/baseball/soccer/football/tennis/golf</p>
+                    <p>to go biking</p>
+                    <p>to wrestle</p>
+                    <p>to ski</p>
+                </div>
+                
+                    <div class="photo">
+                    <img src="golf.jpg" alt="golf" style="max-width:100%; height:auto; object-fit: contain;" >
+                    </div>
+                </div>
+
+            <div class=wrapperv>
+                    <div class="heading" id="hobby"><p>Hobby Verbs</p></div>
+                        <div class="french, hobbyVerbs" >
+                         <p>jouer aux échecs</p>
+                         <p>jouer aux jeux de cartes</p>
+                         <p>jouer aux jeux de société</p> 
+                         <p>jouer aux jeux vidéos</p>  
+                         <p>dessiner</p>
+                         <p><button class="modalButton" verbModal="peindre">*peindre</button></p>
+                         <p>tricoter</p>
+                         <p><button class="modalButton" verbModal="coudre">*coudre</button></p>
+                         <p><button class="modalButton" verbModal="lire">*lire</button></p>
+                         <p>jardiner</p>
+                        </div>
+                        
+                    
+                    <div class="verbs, hobbyVerbs">
+                     <p>to play chess</p>
+                     <p>to play a card game</p>
+                     <p>to play a board game</p>
+                     <p>to play video games</p>
+                     <p>to draw</p>
+                     <p>to paint</p>
+                     <p>to knit</p>
+                     <p>to sew</p>
+                     <p>to read</p>
+                     <p> to garden</p>   
+                    </div>
+                    
+                        <div class="photo">
+                        <img src="pencil.jpg" alt="art" style="max-width:100%; height:auto; object-fit: contain;" >
+                        </div>
+            </div>
+<!--
+Modals
+-->
+<div class="modal" id="etre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> suis</p>
+                <p><b>Tu</b> es</p>
+                <p><b>Il/Elle</b> est</p>
+            </div>
+            <div>
+                <p><b>Nous</b> sommes</p>
+                <p><b>Vous</b> êtes</p>
+                <p><b>Ils/Elles</b> sont</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="avoir">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>J</b>'ai</p>
+                <p><b>Tu</b> as</p>
+                <p><b>Il/Elle</b> a</p>
+            </div>
+            <div>
+                <p><b>Nous</b> avons</p>
+                <p><b>Vous</b> avez</p>
+                <p><b>Ils/Elles</b> ont</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="faire">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> fais</p>
+                <p><b>Tu</b> fais</p>
+                <p><b>Il/Elle</b> fait</p>
+            </div>
+            <div>
+                <p><b>Nous</b> faisons</p>
+                <p><b>Vous</b> faites</p>
+                <p><b>Ils/Elles</b> font</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="devoir">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> dois</p>
+                <p><b>Tu</b> dois</p>
+                <p><b>Il/Elle</b> doit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> devons</p>
+                <p><b>Vous</b> devez</p>
+                <p><b>Ils/Elles</b> doivent</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="aller">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> vais</p>
+                <p><b>Tu</b> vas</p>
+                <p><b>Il/Elle</b> va</p>
+            </div>
+            <div>
+                <p><b>Nous</b> allons</p>
+                <p><b>Vous</b> allez</p>
+                <p><b>Ils/Elles</b> vont</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="voir">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> vois</p>
+                <p><b>Tu</b> vois</p>
+                <p><b>Il/Elle</b> voit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> voyons</p>
+                <p><b>Vous</b> voyez</p>
+                <p><b>Ils/Elles</b> voient</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="prendre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> prends</p>
+                <p><b>Tu</b> prends</p>
+                <p><b>Il/Elle</b> prend</p>
+            </div>
+            <div>
+                <p><b>Nous</b> prenons</p>
+                <p><b>Vous</b> prenez</p>
+                <p><b>Ils/Elles</b> prennent</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="dire">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> dis</p>
+                <p><b>Tu</b> dis</p>
+                <p><b>Il/Elle</b> dit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> disons</p>
+                <p><b>Vous</b> dites</p>
+                <p><b>Ils/Elles</b> disent</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal" id="comprendre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> comprends</p>
+                <p><b>Tu</b> comprends</p>
+                <p><b>Il/Elle</b> comprend</p>
+            </div>
+            <div>
+                <p><b>Nous</b> comprenons</p>
+                <p><b>Vous</b> comprenez</p>
+                <p><b>Ils/Elles</b> comprennent</p>
             </div>
         </div>
 
+    </div>
+</div>
 
+<div class="modal" id="apprendre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>J</b>'apprends</p>
+                <p><b>Tu</b> apprends</p>
+                <p><b>Il/Elle</b> apprend</p>
+            </div>
+            <div>
+                <p><b>Nous</b> apprenons</p>
+                <p><b>Vous</b> apprenez</p>
+                <p><b>Ils/Elles</b> apprennent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="connaitre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> connais</p>
+                <p><b>Tu</b> connais</p>
+                <p><b>Il/Elle</b> connaît</p>
+            </div>
+            <div>
+                <p><b>Nous</b> connaissons</p>
+                <p><b>Vous</b> connaissez</p>
+                <p><b>Ils/Elles</b> connaissent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="seSouvenir">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> me souviens</p>
+                <p><b>Tu</b> te souviens</p>
+                <p><b>Il/Elle</b> se souvient</p>
+            </div>
+            <div>
+                <p><b>Nous</b> nous souvenons</p>
+                <p><b>Vous</b> vous souvenez</p>
+                <p><b>Ils/Elles</b> se souviennent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="appeler">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b>'appelle</p>
+                <p><b>Tu</b> appelles</p>
+                <p><b>Il/Elle</b> appelle</p>
+            </div>
+            <div>
+                <p><b>Nous</b> appelons</p>
+                <p><b>Vous</b> appelez</p>
+                <p><b>Ils/Elles</b> appelent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="repondre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> réponds</p>
+                <p><b>Tu</b> réponds</p>
+                <p><b>Il/Elle</b> répond</p>
+            </div>
+            <div>
+                <p><b>Nous</b> répondons</p>
+                <p><b>Vous</b> répondez</p>
+                <p><b>Ils/Elles</b> répondent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="sePromener">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> me promène</p>
+                <p><b>Tu</b> te promènes</p>
+                <p><b>Il/Elle</b> se promène</p>
+            </div>
+            <div>
+                <p><b>Nous</b> nous promenons</p>
+                <p><b>Vous</b> vous promenez</p>
+                <p><b>Ils/Elles</b> se promènent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="manger">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> mange</p>
+                <p><b>Tu</b> manges</p>
+                <p><b>Il/Elle</b> mange</p>
+            </div>
+            <div>
+                <p><b>Nous</b> mangeons</p>
+                <p><b>Vous</b> mangez</p>
+                <p><b>Ils/Elles</b> mangent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="boire">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> bois</p>
+                <p><b>Tu</b> bois</p>
+                <p><b>Il/Elle</b> boit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> buvons</p>
+                <p><b>Vous</b> buvez</p>
+                <p><b>Ils/Elles</b> boivent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="cuire">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> cuis</p>
+                <p><b>Tu</b> cuis</p>
+                <p><b>Il/Elle</b> cuit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> cuisons</p>
+                <p><b>Vous</b> cuisez</p>
+                <p><b>Ils/Elles</b> cuisent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="courir">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> cours</p>
+                <p><b>Tu</b> cours</p>
+                <p><b>Il/Elle</b> court</p>
+            </div>
+            <div>
+                <p><b>Nous</b> courons</p>
+                <p><b>Vous</b> courez</p>
+                <p><b>Ils/Elles</b> courent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="modal" id="nager">
+        <div class="modalContent">
+            <div class="modal-header">
+                <button class="closeModal">Close</button>
+            </div>
+            <div class="verbGrid">
+                <div>
+                    <p><b>Je</b> nage</p>
+                    <p><b>Tu</b> nages</p>
+                    <p><b>Il/Elle</b> nage</p>
+                </div>
+                <div>
+                    <p><b>Nous</b> nageons</p>
+                    <p><b>Vous</b> nagez</p>
+                    <p><b>Ils/Elles</b> nagent</p>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+
+
+<div class="modal" id="sePromener">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> me promène</p>
+                <p><b>Tu</b> te promènes</p>
+                <p><b>Il/Elle</b> se promène</p>
+            </div>
+            <div>
+                <p><b>Nous</b> nous promenons</p>
+                <p><b>Vous</b> vous promenez</p>
+                <p><b>Ils/Elles</b> se promènent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="peindre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> peins</p>
+                <p><b>Tu</b> peins</p>
+                <p><b>Il/Elle</b> peint</p>
+            </div>
+            <div>
+                <p><b>Nous</b> peignons</p>
+                <p><b>Vous</b> peignez</p>
+                <p><b>Ils/Elles</b> peignent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="coudre">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> couds</p>
+                <p><b>Tu</b> couds</p>
+                <p><b>Il/Elle</b> coud</p>
+            </div>
+            <div>
+                <p><b>Nous</b> cousons</p>
+                <p><b>Vous</b> cousez</p>
+                <p><b>Ils/Elles</b> cousent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="lire">
+    <div class="modalContent">
+        <div class="modal-header">
+            <button class="closeModal">Close</button>
+        </div>
+        <div class="verbGrid">
+            <div>
+                <p><b>Je</b> lis</p>
+                <p><b>Tu</b> lis</p>
+                <p><b>Il/Elle</b> lit</p>
+            </div>
+            <div>
+                <p><b>Nous</b> lisons</p>
+                <p><b>Vous</b> lisez</p>
+                <p><b>Ils/Elles</b> lisent</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+<script>
+var modalButtons=document.querySelectorAll(".modalButton");
+
+for(var i=0;i<modalButtons.length;i++){
+    modalButtons[i].addEventListener("click",function(){ //For each button that is clicked
+        var modal=this.getAttribute("verbModal"); //Create a modal variable that will have the same name as the corresponding verbModal attribute
+        document.getElementById(modal).style.display="block"; //Find correct modalContent based on the ID that matches the verbModal attribute and display it
+    })
+}
+
+var closeButtons=document.querySelectorAll(".closeModal");
+
+for(var i=0;i<closeButtons.length;i++){ //For each "close" button that is clicked
+    closeButtons[i].addEventListener("click",function(){
+        var modal=this.closest(".modal").style.display="none"; // Find the parent modal of the close button and stop displaying it
+    })
+}
+
+window.onclick=function(e){
+    if(e.target.className==="modal"){//if the window is hit in a section with class modal (aka the dark background), close it
+        e.target.style.display="none";
+    }
+}
+
+var scrollButtons=document.querySelectorAll(".verbNavButton");
+
+for(var i=0;i<scrollButtons.length;i++){
+    scrollButtons[i].addEventListener("click", function(){
+        var scroll=this.getAttribute("buttonScroll");
+        document.getElementById(scroll).scrollIntoView();
+    })
+}
+</script>
 
 
 
