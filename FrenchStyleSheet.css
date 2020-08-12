@@ -158,6 +158,7 @@ body{
 
 .photo{
     margin-top:20px;
+    margin-bottom:20px;
     margin-right:20px;
 
 }
@@ -173,9 +174,12 @@ body{
    background-color:#5c94fa;
    outline: 5px solid #190858;
    margin-top:5px;
-   padding-left: 5px;;
+   padding-left: 5px;
+   padding-right:5px;
+   padding-bottom:15px;
    margin-bottom:10px;
-   margin-right:5px;
+   margin-right:10px;
+   margin-top:15px;
 }
 .centered{
     display: block;
@@ -205,7 +209,6 @@ outline:4px;
 .accButton-active{
     background-image: url("https://cdn.pixabay.com/photo/2015/11/20/18/55/french-flag-1053711_1280.png");
     background-size: cover;
-    color:white;
 }
 
 .accButton-active::after{
@@ -216,6 +219,7 @@ outline:4px;
     overflow:hidden;
     max-height:0px;
     transition: max-height 0.2s;
+    font-family: 'Raleway', sans-serif;
 }
 
 .seperation{
@@ -314,4 +318,13 @@ html {
     background-color: rgba(255,0,0,.65);
     outline: 5px solid #190858;
     margin-top:10px;
+}
+
+.adjExp{
+    display:grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
