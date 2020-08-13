@@ -27,25 +27,26 @@ h2{
 }
 .nav {
     background-color:black;
-    overflow: hidden;
+    overflow: auto;
     text-align: center;
     padding-top:10px;
     padding-bottom:10px;
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2px;
 
 }
 
 .nav a{
     
     background-color:#0055a4;
-    text-decoration:none;
     color:white;
     font-size:60px;
     font-family: 'Raleway', sans-serif;
     text-align: center;
     padding:1px 20px;
-   
-    
-    
+    text-decoration: none;
+
 }
 
 .nav a:hover{
@@ -327,4 +328,11 @@ html {
     column-gap: 2px;
     text-align: center;
     font-family: 'Raleway', sans-serif;
+}
+
+.quizContainer{
+    border-radius: 8px;
+    background-color: lightblue;
+    border: 5px solid #190858;
+    margin-top:10px;
 }

@@ -16,11 +16,12 @@
         <h1 class="title">N'Oubliez Pas Le Français</h1>
         
         <div class="nav">
-        <a href="./index.html">Main Menu</a>
+        <a href="./index.html">Home</a>
         <a href="./NVocabulary.html">Nouns</a>
         <a href="./VVocabulary.html">Verbs</a>
         <a href="./AVocabulary.html">Adjectives</a>
         <a href="./Grammar.html">Grammar</a>
+        <a href="./games.html">Games</a>
         </div>
         </div>
 
@@ -184,15 +185,14 @@
     
     for (var i=0;i<buttonList.length;i++){ //Go through each button
         buttonList[i].addEventListener("click", function (){ //For each button, add click function
+            this.classList.toggle('accButton-active'); //Toggle will make the class active. If it is already active, it makes it inactive
             var theContent=this.nextElementSibling; //Collect content of accordian
-            this.classList.toggle('accButton-active'); //Make class 'active' when button hit
-
-            if(this.classList.contains('accButton-active')){ //After click, if class is active
-                theContent.style.maxHeight=theContent.scrollHeight+'px'; //Open up accordian
+            if(theContent.style.maxHeight){ //If the maxHeight is already in use
+                theContent.style.maxHeight=null; //Close accordian by setting its height to null
             }else{
-                theContent.style.maxHeight=0;  //If not, close accordian
+                theContent.style.maxHeight=theContent.scrollHeight+"px";  //Otherwise, open up the accContent according to its height
             }   
-        })
+        });
     }
    
 
