@@ -4,6 +4,7 @@
         <title id="Games"></title>
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css" >
@@ -27,27 +28,94 @@
 
     
     <h2>Games</h2>
-
+    <div class="heading">Vocabulary Quiz</div>
     <div class="nounQuiz">
-     <div class="quizContainer">
-         <div class="questionNum">
+     <div class="quizBorder">
+         <div class="quizWrap">
+         <div class="startButton, centered" id="start">
+             <button class="nounButton, startBtn">Start</button>
+         </div>
+         <div class="questionNum" id="qNum">
 
          </div>
-         <div class="question">
-
+         <div class="question" id=theQuestion>
          </div>
-         <div class="choices">
-
+        <div class="explanation, centered" id="exp">
+        <p>You will be prompted with 20 random questions. Each question will ask you to translate an English vocabulary word into
+            the corresponding French. When you are ready to start, click "Get a Question"! ****Game is still a work in progress
+        </p>
+        </div>
+         <div class="userInput" id="input">
+          <label>Answer: <input type="text" id="formInput"></label>
+          <button class="nounButton" id="submit">Submit Answer</button>
          </div>
-         <div class="nextButton">
-             <button class="nounButton">Next Question</button>
+
+         <div class="nextButton, centered" id="next">
+             <button class="nounButton, nextBtn">Get a Question</button>
+         </div>
+
+         <div class="validation" id="validation">
+          
          </div>
      </div>
+    </div>
     </div>
     </body>
 
     <script>
-        var questNum=document.getElementsByClassName("questionNum");
-        questNum[0].innerHTML="1";
+       var questions=[
+           {
+               question:"the dog",
+               answer: "le chien"
+           },
+           {
+               question:"the cat",
+               answer: "le chat" 
+           },
+           {
+               question:"the guinea pig",
+               answer: "le cochon d'Inde"
+           }
+       ]
+        var randomQ;
+
+        var questNum=document.getElementById("qNum");
+        questNum.innerHTML=0;
+        var valid=document.getElementById("validation");
+        var submitBtn=document.getElementById("submit");
+        var question=document.getElementById("theQuestion");
+        var theInput=document.getElementById("input");
+        var startBtn=document.getElementById("start");
+        var nxtBtn=document.getElementById("next");
+        var theExp=document.getElementById("exp");
+
+        function clickStart(){
+            nxtBtn.style.display="block";
+            startBtn.style.display="none";
+            theExp.style.display="block";
+        };
+        startBtn.addEventListener("click",clickStart);
+
+        function clickNext(){
+        (questNum.innerHTML)++;
+        questNum.style.display="block";
+        theInput.style.display="block";
+        theExp.innerHTML="When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Next Question\".";
+        randomQ=Math.floor(Math.random()*questions.length);
+        question.innerHTML=JSON.stringify(questions[randomQ].question).slice(1,-1);
+        };
+        nxtBtn.addEventListener("click",clickNext);
+
+        function submitAns(){
+            var yourAns=document.getElementById("formInput").value;
+            if(yourAns===(questions[randomQ].answer)){
+                valid.innerHTML="Correct";
+
+            }else{
+                valid.innerHTML="WRONG! The correct answer is: "+(questions[randomQ].answer).bold();
+            }
+        };
+        submitBtn.addEventListener("click",submitAns);
+
     </script>
 </html>
