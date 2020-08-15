@@ -55,7 +55,29 @@
          </div>
 
          <div class="validation" id="validation">
-          
+         </div>
+
+         <div class="scoreRow">
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
+             <div class="circle"></div>
          </div>
      </div>
     </div>
@@ -81,6 +103,7 @@
 
         var questNum=document.getElementById("qNum");
         questNum.innerHTML=0;
+        var qNum;
         var valid=document.getElementById("validation");
         var submitBtn=document.getElementById("submit");
         var question=document.getElementById("theQuestion");
@@ -88,6 +111,7 @@
         var startBtn=document.getElementById("start");
         var nxtBtn=document.getElementById("next");
         var theExp=document.getElementById("exp");
+        var theCircles=document.querySelectorAll(".circle");
 
         function clickStart(){
             nxtBtn.style.display="block";
@@ -98,6 +122,7 @@
 
         function clickNext(){
         (questNum.innerHTML)++;
+        qNum=(questNum.innerHTML);
         questNum.style.display="block";
         theInput.style.display="block";
         theExp.innerHTML="When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Next Question\".";
@@ -106,13 +131,17 @@
         };
         nxtBtn.addEventListener("click",clickNext);
 
+        
+
         function submitAns(){
             var yourAns=document.getElementById("formInput").value;
             if(yourAns===(questions[randomQ].answer)){
                 valid.innerHTML="Correct";
-
+                theCircles[qNum-1].className="circleRight";
             }else{
                 valid.innerHTML="WRONG! The correct answer is: "+(questions[randomQ].answer).bold();
+                theCircles[qNum-1].className="circleWrong";
+
             }
         };
         submitBtn.addEventListener("click",submitAns);
