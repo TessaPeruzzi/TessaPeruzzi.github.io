@@ -139,7 +139,7 @@
         theInput.style.display="block";
         theScore.style.display="block";
         sR.style.display="block";
-        theExp.innerHTML="When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Next Question\".";
+        theExp.innerHTML="When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Get a Question\".";
         randomQ=Math.floor(Math.random()*questions.length);
         question.innerHTML=JSON.stringify(questions[randomQ].question).slice(1,-1);
         valid.style.display="none";
@@ -158,18 +158,21 @@
 
         function submitAns(){
             var yourAns=document.getElementById("formInput").value;
-            if(yourAns===(questions[randomQ].answer)){
+            if(yourAns.length==0){
+                valid.innerHTML="Please put an answer in the input field!";
+                valid.style.display="block";
+            }else{
+                if(yourAns===(questions[randomQ].answer)){
                 valid.innerHTML="Correct";
                 valid.style.display="block";
                 theCircles[qNum-1].className="circleRight";
                 (globalScore)++;
                 theScore.innerHTML="Total Score: \n"+globalScore+"/20";
-                
-            }else{
+                }else{
                 valid.innerHTML="WRONG! The correct answer is: "+(questions[randomQ].answer).bold();
                 valid.style.display="block";
                 theCircles[qNum-1].className="circleWrong";
-
+            }    
             }
         };
         submitBtn.addEventListener("click",submitAns);
