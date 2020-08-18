@@ -54,6 +54,10 @@
              <button class="nounButton, nextBtn">Get a Question</button>
          </div>
 
+         <div class="restartButton, centered" id="restart">
+             <button onclick=location.reload() class="nounButton, restartBtn">Restart</button>
+         </div> 
+
          <div class="validation" id="validation">
          </div>
 
@@ -119,7 +123,7 @@
         var globalScore=0;
         theScore.innerHTML="Total Score: \n"+globalScore+"/20";
         var circContain=document.getElementById("sR");
-
+        var rstartBtn=document.getElementById("restart");
 
         function clickStart(){
             nxtBtn.style.display="block";
@@ -139,9 +143,17 @@
         randomQ=Math.floor(Math.random()*questions.length);
         question.innerHTML=JSON.stringify(questions[randomQ].question).slice(1,-1);
         valid.style.display="none";
+
+        if (qNum==21){
+                nxtBtn.style.display="none";
+                questNum.style.display="none";
+                theInput.style.display="none";
+                theExp.style.display="none";
+                question.style.display="none";
+                rstartBtn.style.display="block"
+            }
         };
         nxtBtn.addEventListener("click",clickNext);
-
         
 
         function submitAns(){
@@ -162,7 +174,8 @@
         };
         submitBtn.addEventListener("click",submitAns);
 
-//To be added: A way to end and restart a new quiz
+//To be added: More questions/answers
 //To be added: Better styling
+//To be added: Make sure user cannot submit empty text box
     </script>
 </html>

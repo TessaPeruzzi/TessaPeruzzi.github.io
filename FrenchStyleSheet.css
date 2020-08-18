@@ -404,7 +404,7 @@ html {
     margin: 10px 10px;
 }
 
-#next{
+#next, #restart{
     grid-column: 2 / span 2;
     grid-row: 3 / span 1;
     height:50px;
@@ -413,7 +413,8 @@ html {
     display:none;
 }
 
-.nextBtn{
+
+.nextBtn, .restartBtn{
     font-size:20px;
     width:100%;
     height:100%;
