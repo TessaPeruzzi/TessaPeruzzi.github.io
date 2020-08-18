@@ -1,184 +1,188 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title id="Games"></title>
-        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css" >
 
-    
+<head>
+    <title id="Games"></title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css">
+
+
     <div class="container">
-        <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css" >
-        
+        <link href="FrenchStyleSheet.css" rel="stylesheet" type="text/css">
+
         <h1 class="title">N'Oubliez Pas Le Français</h1>
-        
+
         <div class="nav">
-        <a href="./index.html">Home</a>
-        <a href="./NVocabulary.html">Nouns</a>
-        <a href="./VVocabulary.html">Verbs</a>
-        <a href="./AVocabulary.html">Adjectives</a>
-        <a href="./Grammar.html">Grammar</a>
-        <a href="./games.html">Games</a>
+            <a href="./index.html">Home</a>
+            <a href="./NVocabulary.html">Nouns</a>
+            <a href="./VVocabulary.html">Verbs</a>
+            <a href="./AVocabulary.html">Adjectives</a>
+            <a href="./Grammar.html">Grammar</a>
+            <a href="./games.html">Games</a>
         </div>
-        </div>
+    </div>
 
 
-    
+
     <h2>Games</h2>
     <div class="heading">Vocabulary Quiz</div>
     <div class="nounQuiz">
-     <div class="quizBorder">
-         <div class="quizWrap">
-         <div class="startButton, centered" id="start">
-             <button class="nounButton, startBtn">Start</button>
-         </div>
-         <div class="questionNum" id="qNum">
+        <div class="quizBorder">
+            <div class="quizWrap">
+                <div class="startButton, centered" id="start">
+                    <button class="nounButton, startBtn">Start</button>
+                </div>
+                <div class="questionNum" id="qNum">
 
-         </div>
-         <div class="question" id=theQuestion>
-         </div>
-        <div class="explanation, centered" id="exp">
-        <p>You will be prompted with 20 random questions. Each question will ask you to translate an English vocabulary word into
-            the corresponding French. When you are ready to start, click "Get a Question"! 
-        </p>
+                </div>
+                <div class="question" id=theQuestion>
+                </div>
+                <div class="explanation, centered" id="exp">
+                    <p>You will be prompted with 20 random questions. Each question will ask you to translate an English
+                        vocabulary word into
+                        the corresponding French. When you are ready to start, click "Get a Question"!
+                    </p>
+                </div>
+                <div class="userInput" id="input">
+                    <label>Answer: <input type="text" id="formInput"></label>
+                    <button class="nounButton" id="submit">Submit Answer</button>
+                </div>
+
+                <div class="nextButton, centered" id="next">
+                    <button class="nounButton, nextBtn">Get a Question</button>
+                </div>
+
+                <div class="restartButton, centered" id="restart">
+                    <button onclick=location.reload() class="nounButton, restartBtn">Restart</button>
+                </div>
+
+                <div class="validation" id="validation">
+                </div>
+
+                <div class="scoreRow" id="sR">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+
+                <div class="totalScore" id="score">
+
+                </div>
+            </div>
         </div>
-         <div class="userInput" id="input">
-          <label>Answer: <input type="text" id="formInput"></label>
-          <button class="nounButton" id="submit">Submit Answer</button>
-         </div>
-
-         <div class="nextButton, centered" id="next">
-             <button class="nounButton, nextBtn">Get a Question</button>
-         </div>
-
-         <div class="restartButton, centered" id="restart">
-             <button onclick=location.reload() class="nounButton, restartBtn">Restart</button>
-         </div> 
-
-         <div class="validation" id="validation">
-         </div>
-
-         <div class="scoreRow" id="sR">
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-             <div class="circle"></div>
-         </div>
-
-         <div class="totalScore" id="score">
-
-         </div>
-     </div>
     </div>
-    </div>
-    </body>
+</body>
 
-    <script>
-       var questions=[
-           {
-               question:"the dog",
-               answer: "le chien"
-           },
-           {
-               question:"the cat",
-               answer: "le chat" 
-           },
-           {
-               question:"the guinea pig",
-               answer: "le cochon d'Inde"
-           }
-       ]
-        var randomQ;
+<script>
+    var questions = [
+        {
+            question: "the dog",
+            answer: "le chien"
+        },
+        {
+            question: "the cat",
+            answer: "le chat"
+        },
+        {
+            question: "the guinea pig",
+            answer: "le cochon d'Inde"
+        }
+    ]
+    var randomQ;
 
-        var questNum=document.getElementById("qNum");
-        questNum.innerHTML=0;
-        var valid=document.getElementById("validation");
-        var submitBtn=document.getElementById("submit");
-        var question=document.getElementById("theQuestion");
-        var theInput=document.getElementById("input");
-        var startBtn=document.getElementById("start");
-        var nxtBtn=document.getElementById("next");
-        var theExp=document.getElementById("exp");
-        var theCircles=document.querySelectorAll(".circle");
-        var theScore=document.getElementById("score");
-        var globalScore=0;
-        theScore.innerHTML="Total Score: \n"+globalScore+"/20";
-        var circContain=document.getElementById("sR");
-        var rstartBtn=document.getElementById("restart");
+    var questNum = document.getElementById("qNum");
+    questNum.innerHTML = 0;
+    var valid = document.getElementById("validation");
+    var submitBtn = document.getElementById("submit");
+    var question = document.getElementById("theQuestion");
+    var theInput = document.getElementById("input");
+    var startBtn = document.getElementById("start");
+    var nxtBtn = document.getElementById("next");
+    var theExp = document.getElementById("exp");
+    var theCircles = document.querySelectorAll(".circle");
+    var theScore = document.getElementById("score");
+    var globalScore = 0;
+    theScore.innerHTML = "Total Score: \n" + globalScore + "/20";
+    var circContain = document.getElementById("sR");
+    var rstartBtn = document.getElementById("restart");
 
-        function clickStart(){
-            nxtBtn.style.display="block";
-            startBtn.style.display="none";
-            theExp.style.display="block";
-        };
-        startBtn.addEventListener("click",clickStart);
+    function clickStart() {
+        nxtBtn.style.display = "block";
+        startBtn.style.display = "none";
+        theExp.style.display = "block";
+    };
+    startBtn.addEventListener("click", clickStart);
 
-        function clickNext(){
+    function clickNext() {
         (questNum.innerHTML)++;
-        qNum=(questNum.innerHTML);
-        questNum.style.display="block";
-        theInput.style.display="block";
-        theScore.style.display="block";
-        sR.style.display="block";
-        theExp.innerHTML="When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Get a Question\".";
-        randomQ=Math.floor(Math.random()*questions.length);
-        question.innerHTML=JSON.stringify(questions[randomQ].question).slice(1,-1);
-        valid.style.display="none";
+        qNum = (questNum.innerHTML);
+        questNum.style.display = "block";
+        theInput.style.display = "block";
+        theScore.style.display = "block";
+        sR.style.display = "block";
+        theExp.innerHTML = "When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Get a Question\".";
+        randomQ = Math.floor(Math.random() * questions.length);
+        question.innerHTML = JSON.stringify(questions[randomQ].question).slice(1, -1);
+        valid.style.display = "none";
 
-        if (qNum==21){
-                nxtBtn.style.display="none";
-                questNum.style.display="none";
-                theInput.style.display="none";
-                theExp.style.display="none";
-                question.style.display="none";
-                rstartBtn.style.display="block"
-            }
-        };
-        nxtBtn.addEventListener("click",clickNext);
-        
+        if (qNum == 21) {
+            nxtBtn.style.display = "none";
+            questNum.style.display = "none";
+            theInput.style.display = "none";
+            theExp.style.display = "none";
+            question.style.display = "none";
+            rstartBtn.style.display = "block"
+        }
+    };
+    nxtBtn.addEventListener("click", clickNext);
 
-        function submitAns(){
-            var yourAns=document.getElementById("formInput").value;
-            if(yourAns.length==0){
-                valid.innerHTML="Please put an answer in the input field!";
-                valid.style.display="block";
-            }else{
-                if(yourAns===(questions[randomQ].answer)){
-                valid.innerHTML="Correct";
-                valid.style.display="block";
-                theCircles[qNum-1].className="circleRight";
+
+    function submitAns() {
+        var yourAns = document.getElementById("formInput").value;
+        if (yourAns.length == 0) {
+            valid.innerHTML = "Please put an answer in the input field!";
+            valid.style.display = "block";
+        } else {
+            if (yourAns === (questions[randomQ].answer)) {
+                valid.innerHTML = "Correct";
+                valid.style.display = "block";
+                theCircles[qNum - 1].className = "circleRight";
                 (globalScore)++;
-                theScore.innerHTML="Total Score: \n"+globalScore+"/20";
-                }else{
-                valid.innerHTML="WRONG! The correct answer is: "+(questions[randomQ].answer).bold();
-                valid.style.display="block";
-                theCircles[qNum-1].className="circleWrong";
-            }    
+                theScore.innerHTML = "Total Score: \n" + globalScore + "/20";
+            } else {
+                valid.innerHTML = "WRONG! The correct answer is: " + (questions[randomQ].answer).bold();
+                valid.style.display = "block";
+                theCircles[qNum - 1].className = "circleWrong";
             }
-        };
-        submitBtn.addEventListener("click",submitAns);
+        }
+    };
+    submitBtn.addEventListener("click", submitAns);
 
 //To be added: More questions/answers
 //To be added: Better styling
 //To be added: Make sure user cannot submit empty text box
-    </script>
+</script>
+
 </html>
