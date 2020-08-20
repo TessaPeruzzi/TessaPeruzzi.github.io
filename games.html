@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="nextButton, centered" id="next">
-                    <button class="nounButton, nextBtn">Get a Question</button>
+                    <button id="nextBtn">Get a Question</button>
                 </div>
 
                 <div class="restartButton, centered" id="restart">
@@ -87,9 +87,7 @@
                     <div class="circle"></div>
                 </div>
 
-                <div class="totalScore" id="score">
-
-                </div>
+                <div class="totalScore" id="score"></div>
             </div>
         </div>
     </div>
@@ -127,6 +125,7 @@
     theScore.innerHTML = "Total Score: \n" + globalScore + "/20";
     var circContain = document.getElementById("sR");
     var rstartBtn = document.getElementById("restart");
+    var getaQ=document.getElementById("nextBtn");
 
     function clickStart() {
         nxtBtn.style.display = "block";
@@ -146,6 +145,7 @@
         randomQ = Math.floor(Math.random() * questions.length);
         question.innerHTML = JSON.stringify(questions[randomQ].question).slice(1, -1);
         valid.style.display = "none";
+        getaQ.disabled=true;
 
         if (qNum == 21) {
             nxtBtn.style.display = "none";
@@ -155,6 +155,8 @@
             question.style.display = "none";
             rstartBtn.style.display = "block"
         }
+
+        
     };
     nxtBtn.addEventListener("click", clickNext);
 
@@ -177,6 +179,7 @@
                 theCircles[qNum - 1].className = "circleWrong";
             }
         }
+        getaQ.disabled=false;
     };
     submitBtn.addEventListener("click", submitAns);
 
