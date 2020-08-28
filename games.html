@@ -48,6 +48,17 @@
                         the corresponding French. When you are ready to start, click "Get a Question"!
                     </p>
                 </div>
+
+                <div id="questionChoices">
+                    <div><input type="radio" name="qChoice" value="Pets">Pets</div>
+                    <div><input type="radio" name="qChoice" value="Family">Family</div>
+                    <div><input type="radio" name="qChoice" value="Numbers">Numbers</div>
+                    <div><input type="radio" name="qChoice" value="Food">Food</div>
+                    <div><input type="radio" name="qChoice" value="Stores">Stores</div>
+                    <div><input type="radio" name="qChoice" value="Clothing">Clothing</div>
+                </div>
+
+
                 <div class="userInput" id="input">
                     <label>Answer: <input type="text" id="formInput"></label>
                     <button class="nounButton" id="submit">Submit Answer</button>
@@ -55,6 +66,10 @@
 
                 <div class="nextButton, centered" id="next">
                     <button id="nextBtn">Get a Question</button>
+                </div>
+
+                <div class="nextButton, centered" id="pickChoice">
+                    <button id="choiceBtn">Get a Question</button>
                 </div>
 
                 <div class="restartButton, centered" id="restart">
@@ -94,7 +109,7 @@
 </body>
 
 <script>
-    var questions = [
+    var petQuestions = [
         {
             question: "the dog",
             answer: "le chien"
@@ -106,9 +121,752 @@
         {
             question: "the guinea pig",
             answer: "le cochon d'Inde"
+        },
+        {
+            question: "the rabbit",
+            answer: "le lapin"
+        },
+        {
+            question: "the hamster",
+            answer: "le hamster"
+        },
+        {
+            question: "the chinchilla",
+            answer: "le chinchilla"
+        },
+        {
+            question: "the mouse",
+            answer: "le souris"
+        },
+        {
+            question: "the rat",
+            answer: "le rat"
+        },
+        {
+            question: "the frog",
+            answer: "la grenouille"
+        },
+        {
+            question: "the lizard",
+            answer: "le lézard"
+        },
+        {
+            question: "the fish",
+            answer: "le poisson"
+        },
+        {
+            question: "the bird",
+            answer: "l'oiseau'"
+        },
+        {
+            question: "the parrot",
+            answer: "le perroquet"
         }
     ]
-    var randomQ;
+
+    var familyQuestions = [
+        {
+            question: "the dad",
+            answer: "le père"
+        },
+        {
+            question: "the mom",
+            answer: "la mère"
+        },
+        {
+            question: "the brother",
+            answer: "le frère"
+        },
+        {
+            question: "the sister",
+            answer: "la soeur"
+        },
+        {
+            question: "the grandmother",
+            answer: "la grand-mère"
+        },
+        {
+            question: "the grandfather",
+            answer: "le grand-père"
+        },
+        {
+            question: "the grandchildren",
+            answer: "les petits-enfants"
+        },
+        {
+            question: "the mother-in-law",
+            answer: "la belle-mère"
+        },
+        {
+            question: "the father-in-law",
+            answer: "le beau-père"
+        },
+        {
+            question: "the sister-in-law",
+            answer: "la belle-souer"
+        },
+        {
+            question: "the brother-in-law",
+            answer: "le beau-frère"
+        },
+        {
+            question: "the husband",
+            answer: "le mari"
+        },
+        {
+            question: "the wife",
+            answer: "la femme"
+        },
+        {
+            question: "the spouse (masculine)",
+            answer: "le époux"
+        },
+        {
+            question: "the marriage",
+            answer: "le mariage"
+        },
+        {
+            question: "single",
+            answer: "célibataire"
+        },
+        {
+            question: "the uncle",
+            answer: "l'oncle"
+        },
+        {
+            question: "the aunt",
+            answer: "la tante"
+        },
+        {
+            question: "the niece",
+            answer: "la nièce"
+        },
+        {
+            question: "the nephew",
+            answer: "le neveu"
+        },
+        {
+            question: "the extended family",
+            answer: "la famille élargie"
+        }
+    ]
+
+    var numQuestions = [
+        {
+            question: "1",
+            answer: "un"
+        },
+        {
+            question: "2",
+            answer: "deux"
+        },
+        {
+            question: "3",
+            answer: "trois"
+        },
+        {
+            question: "4",
+            answer: "quatre"
+        },
+        {
+            question: "5",
+            answer: "cinq"
+        },
+        {
+            question: "6",
+            answer: "six"
+        },
+        {
+            question: "7",
+            answer: "sept"
+        },
+        {
+            question: "8",
+            answer: "huit"
+        },
+        {
+            question: "9",
+            answer: "neuf"
+        },
+        {
+            question: "10",
+            answer: "dix"
+        },
+        {
+            question: "11",
+            answer: "onze"
+        },
+        {
+            question: "12",
+            answer: "douze"
+        },
+        {
+            question: "13",
+            answer: "treize"
+        },
+        {
+            question: "14",
+            answer: "quatorze"
+        },
+        {
+            question: "15",
+            answer: "quinze"
+        },
+        {
+            question: "16",
+            answer: "seize"
+        },
+        {
+            question: "17",
+            answer: "dix-sept"
+        },
+        {
+            question: "18",
+            answer: "dix-huit"
+        },
+        {
+            question: "19",
+            answer: "dix-neuf"
+        },
+        {
+            question: "20",
+            answer: "vingt"
+        },
+        {
+            question: "21",
+            answer: "vingt et un"
+        },
+        {
+            question: "25",
+            answer: "vingt cinq"
+        },
+        {
+            question: "36",
+            answer: "trente six"
+        },
+        {
+            question: "38",
+            answer: "trente huit"
+        },
+        {
+            question: "44",
+            answer: "quarante quatre"
+        },
+        {
+            question: "57",
+            answer: "cinquante sept"
+        },
+        {
+            question: "63",
+            answer: "soixante trois"
+        },
+        {
+            question: "70",
+            answer: "soixante-dix"
+        },
+        {
+            question: "75",
+            answer: "soixante-quinze"
+        },
+        {
+            question: "80",
+            answer: "quatre-vingts"
+        },
+        {
+            question: "90",
+            answer: "quatre-vingt-dix"
+        },
+        {
+            question: "98",
+            answer: "quatre-vingt-dix-huit"
+        },
+        {
+            question: "100",
+            answer: "cent"
+        },
+        {
+            question: "400",
+            answer: "quatre cent"
+        },
+        {
+            question: "1,000",
+            answer: "mille"
+        },
+        {
+            question: "1,000,000",
+            answer: "un million"
+        }
+
+    ]
+
+    var storeQuestions = [
+        {
+            question: "a store",
+            answer: "un magasin"
+        },
+        {
+            question: "a department store",
+            answer: "un grand magasin"
+        },
+        {
+            question: "a clothing store",
+            answer: "un magasin de vêtements"
+        },
+        {
+            question: "a restaurant",
+            answer: "un restaurant"
+        },
+        {
+            question: "a small restaurant",
+            answer: "un bistro"
+        },
+        {
+            question: "a bank",
+            answer: "une banque"
+        },
+        {
+            question: "a post office",
+            answer: "une poste"
+        },
+        {
+            question: "a pharmacy",
+            answer: "une pharmacie"
+        },
+        {
+            question: "a drug store",
+            answer: "une droguerie"
+        },
+        {
+            question: "a pet shop",
+            answer: "une animalerie"
+        },
+        {
+            question: "a book shop",
+            answer: "une librairie"
+        },
+        {
+            question: "a gas station",
+            answer: "une station essence"
+        },
+        {
+            question: "a supermarket",
+            answer: "un supermarché"
+        },
+        {
+            question: "a small grocery store",
+            answer: "une épicerie"
+        },
+        {
+            question: "a bakery",
+            answer: "une boulangerie"
+        },
+        {
+            question: "a pastry shop",
+            answer: "une pâtisserie"
+        },
+        {
+            question: "une fromagerie",
+            answer: "dix-sept"
+        },
+        {
+            question: "a butcher shop",
+            answer: "une boucherie"
+        },
+        {
+            question: "a pork shop",
+            answer: "une charcuterie"
+        }
+
+    ]
+
+    var foodQuestions = [
+        {
+            question: "the food",
+            answer: "la nourriture"
+        },
+        {
+            question: "the drinks",
+            answer: "la boisson"
+        },
+        {
+            question: "the breakfast",
+            answer: "le petit déjeuner"
+        },
+        {
+            question: "the bread",
+            answer: "le pain"
+        },
+        {
+            question: "the toast",
+            answer: "le pain grillé"
+        },
+        {
+            question: "an egg",
+            answer: "un oeuf"
+        },
+        {
+            question: "the jam",
+            answer: "la confiture"
+        },
+        {
+            question: "the butter",
+            answer: "le beurre"
+        },
+        {
+            question: "the crepe",
+            answer: "la crêpe"
+        },
+        {
+            question: "the yogurt",
+            answer: "le yaourt"
+        },
+        {
+            question: "a coffee",
+            answer: "un café"
+        },
+        {
+            question: "a tea",
+            answer: "un thé"
+        },
+        {
+            question: "the water",
+            answer: "l'eau"
+        },
+        {
+            question: "the milk",
+            answer: "le lait"
+        },
+        {
+            question: "the juice",
+            answer: "le jus"
+        },
+        {
+            question: "a fruit",
+            answer: "un fruit"
+        },
+        {
+            question: "an apple",
+            answer: "une pomme"
+        },
+        {
+            question: "a pear",
+            answer: "une poire"
+        },
+        {
+            question: "a cherry",
+            answer: "une cerise"
+        },
+        {
+            question: "a strawberry",
+            answer: "une fraise"
+        },
+        {
+            question: "a lemon",
+            answer: "un citron"
+        },
+        {
+            question: "an orange",
+            answer: "un orange"
+        },
+        {
+            question: "a grape",
+            answer: "un raisin"
+        },
+        {
+            question: "a snack",
+            answer: "le goûter"
+        },
+        {
+            question: "the nuts",
+            answer: "les noix"
+        },
+        {
+            question: "the lunch",
+            answer: "le déjeuner"
+        },
+        {
+            question: "a salad",
+            answer: "une salade"
+        },
+        {
+            question: "a soup",
+            answer: "une soupe"
+        },
+        {
+            question: "a sandwich",
+            answer: "un sandwich"
+        },
+        {
+            question: "the ham",
+            answer: "le jambon"
+        },
+        {
+            question: "the turkey",
+            answer: "la dinde"
+        },
+        {
+            question: "the cheese",
+            answer: "le fromage"
+        },
+        {
+            question: "the dinner",
+            answer: "le dîner"
+        },
+        {
+            question: "the appetizer",
+            answer: "le hors d'oeuvre"
+        },
+        {
+            question: "the pasta",
+            answer: "les pâtes"
+        },
+        {
+            question: "the rice",
+            answer: "le riz"
+        },
+        {
+            question: "the fries",
+            answer: "les frites"
+        },
+        {
+            question: "a potato",
+            answer: "une pomme de terre"
+        },
+        {
+            question: "the meat",
+            answer: "la viande"
+        },
+        {
+            question: "the chicken",
+            answer: "le poulet"
+        },
+        {
+            question: "the steak",
+            answer: "le bifteck"
+        },
+        {
+            question: "the fish",
+            answer: "le poisson"
+        },
+        {
+            question: "the seafood",
+            answer: "les fruits de mer"
+        },
+        {
+            question: "the shrimp",
+            answer: "les crevattes"
+        },
+        {
+            question: "the squid",
+            answer: "le calmar"
+        },
+        {
+            question: "the crab",
+            answer: "le crabe"
+        },
+        {
+            question: "a vegetable",
+            answer: "un légume"
+        },
+        {
+            question: "a carrot",
+            answer: "une carotte"
+        },
+        {
+            question: "a cucumber",
+            answer: "un comcombre"
+        },
+        {
+            question: "the peas",
+            answer: "les petits pois"
+        },
+        {
+            question: "the corn",
+            answer: "le maïs"
+        },
+        {
+            question: "the lettuce",
+            answer: "la laitue"
+        },
+        {
+            question: "the garlic",
+            answer: "l’ail"
+        },
+        {
+            question: "the onion",
+            answer: "l’oignon"
+        },
+        {
+            question: "a pop",
+            answer: "un soda"
+        },
+        {
+            question: "a lemonade",
+            answer: "une limonade"
+        },
+        {
+            question: "the wine",
+            answer: "le vin"
+        },
+        {
+            question: "the dessert",
+            answer: "le dessert"
+        },
+        {
+            question: "the icecream",
+            answer: "la glace"
+        },
+        {
+            question: "a cake",
+            answer: "un gâteau"
+        },
+        {
+            question: "a pie",
+            answer: "une tarte"
+        },
+        {
+            question: "a cookie",
+            answer: "un biscuit"
+        },
+        {
+            question: "a candy",
+            answer: "un bonbon"
+        },
+        {
+            question: "the chocolate",
+            answer: "le chocolat"
+        }
+    ]
+
+    var clothingQuestions = [
+        {
+            question: "the clothing",
+            answer: "les vêtements"
+        },
+        {
+            question: "a blouse",
+            answer: "une chemisier"
+        },
+        {
+            question: "a shirt",
+            answer: "une chemise"
+        },
+        {
+            question: "a T-shirt",
+            answer: "u tee-shirt"
+        },
+        {
+            question: "a sweater",
+            answer: "un pull"
+        },
+        {
+            question: "a jacket",
+            answer: "un blouson"
+        },
+        {
+            question: "a winter coat",
+            answer: "un anorak"
+        },
+        {
+            question: "a rain coat",
+            answer: "un imperméable"
+        },
+        {
+            question: "a pair of pants",
+            answer: "un pantalon"
+        },
+        {
+            question: "a pair of jeans",
+            answer: "un jean"
+        },
+        {
+            question: "a pair of shorts",
+            answer: "un short"
+        },
+        {
+            question: "a skirt",
+            answer: "une jupe"
+        },
+        {
+            question: "a men's suit",
+            answer: "un costume"
+        },
+        {
+            question: "a dress",
+            answer: "une robe"
+        },
+        {
+            question: "a tie",
+            answer: "une cravate"
+        },
+        {
+            question: "the jewelery",
+            answer: "les bijoux"
+        },
+        {
+            question: "a ring",
+            answer: "une bague"
+        },
+        {
+            question: "a bracelet",
+            answer: "un bracelet"
+        },
+        {
+            question: "a earring",
+            answer: "une boucle d'oreille"
+        },
+        {
+            question: "a necklace",
+            answer: "un collier"
+        },
+        {
+            question: "a bag",
+            answer: "un sac à main"
+        },
+        {
+            question: "a wallet",
+            answer: "un portefeuille"
+        },
+        {
+            question: "the glasses",
+            answer: "les lunettes"
+        },
+        {
+            question: "the sunglasses",
+            answer: "les lunettes de soleil"
+        },
+        {
+            question: "a scarf",
+            answer: "un foulard"
+        },
+        {
+            question: "the gloves",
+            answer: "les gants"
+        },
+        {
+            question: "a hat",
+            answer: "un chapeau"
+        },
+        {
+            question: "the socks",
+            answer: "les chaussettes"
+        },
+        {
+            question: "the shoes",
+            answer: "les chausseurs"
+        },
+        {
+            question: "the underwear",
+            answer: "les sous-vêtements"
+        },
+        {
+            question: "the swimsuit",
+            answer: "les maillot de bain"
+        }
+    ]
+
+    var questions = [];
+
 
     var questNum = document.getElementById("qNum");
     questNum.innerHTML = 0;
@@ -125,67 +883,121 @@
     theScore.innerHTML = "Total Score: \n" + globalScore + "/20";
     var circContain = document.getElementById("sR");
     var rstartBtn = document.getElementById("restart");
-    var getaQ=document.getElementById("nextBtn");
+    var getaQ = document.getElementById("nextBtn");
+    var radioBtns = document.getElementsByName("qChoice");
+    var radioBtnWrap = document.getElementById("questionChoices");
+    var userChoice = document.getElementById("pickChoice");
 
-    function clickStart() {
-        nxtBtn.style.display = "block";
+    function clickStart() {    //Clicking Start will initiate a screen allowing users to pick their types of questions
+        userChoice.style.display = "block";
         startBtn.style.display = "none";
         theExp.style.display = "block";
+        radioBtnWrap.style.display = "grid";
     };
     startBtn.addEventListener("click", clickStart);
 
-    function clickNext() {
-        (questNum.innerHTML)++;
-        qNum = (questNum.innerHTML);
+
+    function pickVocabSet() {
+        for (var i = 0; i < radioBtns.length; i++) {
+            if (radioBtns[i].checked) {   //For whichever radio button is clicked
+                switch (radioBtns[i].value) { //Check its value and insert the correspoding array into a global array so all functions can use it
+                    case 'Pets':
+                        for (var j = 0; j < petQuestions.length; j++) {
+                            questions[j] = petQuestions[j];
+                        };
+                        break;
+                    case 'Family':
+                        for (var j = 0; j < familyQuestions.length; j++) {
+                            questions[j] = familyQuestions[j];
+                        };
+                        break;
+                    case 'Numbers':
+                        for (var j = 0; j < numQuestions.length; j++) {
+                            questions[j] = numQuestions[j];
+                        };
+                        break;
+                    case 'Stores':
+                        for (var j = 0; j < storeQuestions.length; j++) {
+                            questions[j] = storeQuestions[j];
+                        };
+                        break;
+                    case 'Clothing':
+                        for (var j = 0; j < clothingQuestions.length; j++) {
+                            questions[j] = clothingQuestions[j];
+                        };
+                        break;
+                    case 'Food': 
+                        for (var j=0;j<foodQuestions.length;j++){
+                            questions[j]=foodQuestions[j];
+                        }
+                        break;
+                }
+            };
+        };
+
+        userChoice.style.display = "none"; //Set up question screen by hiding/showing appropriate objects
+        nxtBtn.style.display = "block";
         questNum.style.display = "block";
         theInput.style.display = "block";
         theScore.style.display = "block";
         sR.style.display = "block";
+        radioBtnWrap.style.display = "none";
+        (questNum.innerHTML)++; //Everytime user clicks "Get a Question", raise question number by one
+        qNum = (questNum.innerHTML);// Make that number a global variable so the other functions can use it
         theExp.innerHTML = "When you are done writing your answer, click \"Submit Answer\" to check whether it was right! When you are ready to move on, click \"Get a Question\".";
+        randomQ = Math.floor(Math.random() * questions.length); //Pick a random number based on the question array length 
+        question.innerHTML = JSON.stringify(questions[randomQ].question).slice(1, -1); //That number will be the index for the question that is picked
+        valid.style.display = "none";
+        getaQ.disabled = true; //Disable the "Get a question" button so that the user cannot keep grabbing questions if they do not submit an answer
+    };
+    userChoice.addEventListener("click", pickVocabSet);
+
+
+
+    function clickNext() {
+        (questNum.innerHTML)++; //Same code that was used to pick the first question
+        qNum = (questNum.innerHTML);
         randomQ = Math.floor(Math.random() * questions.length);
         question.innerHTML = JSON.stringify(questions[randomQ].question).slice(1, -1);
-        valid.style.display = "none";
-        getaQ.disabled=true;
+        getaQ.disabled = true;
 
-        if (qNum == 21) {
+        if (qNum == 21) { //If I reach 21 questions, remove everything on the screen and replace it with a "restart button"
             nxtBtn.style.display = "none";
             questNum.style.display = "none";
             theInput.style.display = "none";
             theExp.style.display = "none";
             question.style.display = "none";
-            rstartBtn.style.display = "block"
+            rstartBtn.style.display = "block"; //(In HTML code), when "restart" is clicked, the page will reload so the user can play again
         }
-
-        
     };
     nxtBtn.addEventListener("click", clickNext);
 
 
     function submitAns() {
-        var yourAns = document.getElementById("formInput").value;
-        if (yourAns.length == 0) {
+        var yourAns = document.getElementById("formInput").value; //Get user's answer
+        if (yourAns.length == 0) { //If there is no answer, prompt user to put in an answer
             valid.innerHTML = "Please put an answer in the input field!";
             valid.style.display = "block";
         } else {
-            if (yourAns === (questions[randomQ].answer)) {
+            if (yourAns === (questions[randomQ].answer)) { //If ther answer is correct, increment score
                 valid.innerHTML = "Correct";
                 valid.style.display = "block";
                 theCircles[qNum - 1].className = "circleRight";
                 (globalScore)++;
                 theScore.innerHTML = "Total Score: \n" + globalScore + "/20";
-            } else {
+            } else { //If it is wrong, display the correct answer
                 valid.innerHTML = "WRONG! The correct answer is: " + (questions[randomQ].answer).bold();
                 valid.style.display = "block";
                 theCircles[qNum - 1].className = "circleWrong";
             }
         }
-        getaQ.disabled=false;
+        getaQ.disabled = false; //Once the user submits an answer, the "Get a Question" button is enabled again
     };
     submitBtn.addEventListener("click", submitAns);
 
-//To be added: More questions/answers
-//To be added: Better styling
-//To be added: Make sure user cannot submit empty text box
+//To be added:
+//Make sure the user has picked a radio button. If not, the "Get a Question" button should be disabled
+//On the left side of the screen, add letters with accents so the user can easily copy or click it when they need an accented letter
 </script>
 
 </html>

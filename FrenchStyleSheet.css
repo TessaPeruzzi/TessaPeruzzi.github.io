@@ -77,7 +77,7 @@ h2{
 
 .nounNav{
     display:grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(6,1fr);
     padding-top: 5px;
     overflow: auto;    
 }
@@ -304,7 +304,7 @@ html {
     scroll-behavior: smooth;
   }
 
-.numWrap{
+.fourWrap{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     grid-column-gap:1px;
@@ -312,7 +312,7 @@ html {
     background-image:url("./blue-snow.png"); /* Background pattern from Toptal Subtle Patterns */
 }
 
-.numHeading{
+.fourHeading{
     grid-column: 1 / span 5;
     text-align:center;
     font-size:30px;
@@ -401,7 +401,7 @@ html {
     margin: 10px 10px;
 }
 
-#next, #restart{
+#next, #restart, #pickChoice{
     grid-column: 2 / span 2;
     grid-row: 3 / span 1;
     height:50px;
@@ -410,7 +410,7 @@ html {
 }
 
 
-#nextBtn, .restartBtn{
+#nextBtn, .restartBtn, #choiceBtn{
     font-family:'Raleway', sans-serif;
     font-size:20px;
     font-weight:bold;
@@ -462,4 +462,15 @@ html {
     grid-column: 4 / span 1;
     grid-row: 3 / span 1;
     display:none;
+}
+
+#questionChoices{
+    display:none;
+    grid-template-columns: repeat(6, 1fr);;
+    align-items:center;
+    width:100%;
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1;
+    margin-left:10px;
+
 }
